@@ -3,17 +3,16 @@ Create Table Aluno(
     nomealuno varchar(155),
     cursoid int not null,
     idade int not null,
-    telefone int not null
+    telefone double not null
 );
 
-ALTER table Aluno add CONSTRAINT FL_Aluno_Curso foreign key(cursoid) references curso(id);
+Alter table Aluno add CONSTRAINT FK_Aluno_Curso foreign key(cursoid) references curso(id);
 
-insert into aluno(nomecurso, periodo, cargahoraria) values ('Desenvolvimento de Sistemas', 'Manhã', 250);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Edificações', 'Noite', 180);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Química', 'Tarde', 200);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Marketing', 'Manhã', 150);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Logística', 'Tarde', 100);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Administração', 'Noite', 90);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Contabilidade', 'Tarde', 250);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Edificações', 'Manhã', 180);
-insert into curso(nomecurso, periodo, cargahoraria) values ('Marketing', 'Noite', 150);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Matheus', 1, 17, 14996685317);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Raul', 2, 15, 14994164819);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Vinicius', 3, 16, 14997485910);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Vitor', 4, 17, 14994285291);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Pedro', 1, 18, 14996582194);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Marcela', 2, 16, 14995825920);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Mariana', 3, 15, 14996439410);
+insert into aluno(nomealuno, cursoid, idade, telefone) values ('Nickolas', 4, 16, 14990259329);
