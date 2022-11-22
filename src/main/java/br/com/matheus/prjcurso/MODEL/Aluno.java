@@ -4,20 +4,26 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="curso")
+@Table(name="aluno")
 
-public class Curso {
-
-    @Id
-
+public class Aluno {
+    @Id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Integer id;
-    private String nomecurso;
 
+    private String nomealuno;
 
-    @OneToMany(mappedBy = "curso")
-    private List<Aluno> alunos = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name="cursoid")
+    private Curso curso;
+
+    public String getNomealuno() {
+        return nomealuno;
+    }
+
+    public void setNomealuno(String nomealuno) {
+        this.nomealuno = nomealuno;
+    }
 
     public Integer getId() {
         return id;
@@ -27,20 +33,20 @@ public class Curso {
         this.id = id;
     }
 
-    public String getNomecurso() {
-        return nomecurso;
+    public Curso getCurso() {
+        return curso;
     }
 
-    public void setNomecurso(String nomecurso) {
-        this.nomecurso = nomecurso;
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Curso curso = (Curso) o;
-        return id.equals(curso.id);
+        Aluno aluno = (Aluno) o;
+        return id.equals(aluno.id);
     }
 
     @Override
