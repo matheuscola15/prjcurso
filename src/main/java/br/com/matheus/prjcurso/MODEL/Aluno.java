@@ -7,7 +7,9 @@ import java.util.Objects;
 @Table(name="aluno")
 
 public class Aluno {
-    @Id;
+
+    @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

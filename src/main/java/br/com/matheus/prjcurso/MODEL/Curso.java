@@ -1,6 +1,8 @@
 package br.com.matheus.prjcurso.MODEL;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +19,7 @@ public class Curso {
 
 
     @OneToMany(mappedBy = "curso")
+
     private List<Aluno> alunos = new ArrayList<>();
 
     public Integer getId() {
